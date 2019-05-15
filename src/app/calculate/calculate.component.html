@@ -1,0 +1,19 @@
+<h3>{{add.firstNumber}}</h3>
+
+<div class="container">
+    <div class="form-group row">
+        <label for="fNumber" class="col-sm-0 col-form-label">Number:</label>
+        <div class="col-sm-4"> 
+          <input name="number" [(ngModel)]="add.firstNumber" type="text" class="form-control" id="inputUsername" placeholder="First Number" required>
+        </div>
+    </div>
+      <div class="form-group row">
+          <label for="sNumber" class="col-sm-0 col-form-label">Number:</label>
+          <div class="col-sm-4">
+            <input name = "number" [(ngModel)]="add.secondNumber" type="text" class="form-control" id="inputPassword" placeholder="Second number" required>
+          </div>
+      </div>
+    
+<button type="submit" class="btn btn-primary mb-2" (click) ="calculateSum(add)">Total</button>   {{sumResult.total}}
+</div>
+<a [routerLink]="['/home']" class="btn btn-link">Cancel</a>

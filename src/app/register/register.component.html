@@ -1,0 +1,70 @@
+<p>
+    <a routerLink="/register">register</a>
+    <a routerLink="/calculate">calculate</a> 
+  </p>
+  
+<h2>Register</h2>
+<form> 
+        <div class="form-group row">
+                <label for="firstName" class="col-sm-0 col-form-label">First Name:</label>
+                <div class="col-sm-4"> 
+                  <input name="text" [(ngModel)]="userRegister.firstName" type="text" class="form-control" id="inputUsername" placeholder="First Name" required>
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="lastName" class="col-sm-0 col-form-label">Last Name:</label>
+                <div class="col-sm-4"> 
+                  <input name="text" [(ngModel)]="userRegister.lastName" type="text" class="form-control" id="inputUsername" placeholder="Last Name" required>
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="username" class="col-sm-0 col-form-label">username:</label>
+                <div class="col-sm-4"> 
+                  <input name="text" [(ngModel)]="userRegister.username" type="text" class="form-control" id="inputUsername" placeholder="username" required>
+                </div>
+        </div>
+        <div class="form-group row">
+                <label for="password" class="col-sm-0 col-form-label">Password:</label>
+                <div class="col-sm-4"> 
+                  <input name="text" [(ngModel)]="userRegister.password" type="text" class="form-control" id="inputUsername" placeholder="Password" required>
+                </div>
+        </div>
+    <button type="submit" class="btn btn-primary mb-2" (click) ="userRegistration(userRegister)">Register</button>
+    <button type="submit" class="btn btn-primary mb-2" (click) ="getAllUsers()">All Users</button>
+    
+</form>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of listOfUsers">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.username}}</td>
+      <button type="submit" class="btn btn-primary mb-2" (click) ="deleteUser(user.username)">Delete User</button> <!--deleteUser(user) to pass user object-->
+      <button type="submit" class="btn btn-primary mb-2" (click) ="viewUser(user.username)">     view user</button>
+    </tr>
+  </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{viewOfUsers.firstName}}</td>
+      <td>{{viewOfUsers.lastName}}</td>
+      <td>{{viewOfUsers.username}}</td>
+    </tr>
+  </tbody>
+</table>

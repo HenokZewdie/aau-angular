@@ -1,0 +1,7 @@
+---
+applications:
+- name: aau-angular
+  domain: cfapps.io
+  memory: 512M
+  instances: 1
+  buildpack: staticfile_buildpack
